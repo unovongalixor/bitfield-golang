@@ -1,2 +1,2 @@
 # bitfield-golang
-A golang implementation of a realizable bitfield
+A resizeable bitfield implementation in golang
