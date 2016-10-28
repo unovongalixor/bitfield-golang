@@ -42,7 +42,7 @@ func (bf *Bitfield) SetBit(n int) {
     index := int64(n / 4)
     bit := uint16(n % 4)
 
-    if index > bf.Size() {
+    if index >= bf.Size() {
         if bf.autosizing == true {
             bf.Grow(index - bf.Size())
         } else {
