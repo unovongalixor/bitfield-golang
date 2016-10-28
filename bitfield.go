@@ -14,6 +14,12 @@ func NewBitfield(autosizing bool, size int) *Bitfield {
     return &bf
 }
 
+func (bf *Bitfield) Copy(b []byte) {
+    new_bytes := make([]byte, len(b))
+    copy(new_bytes, b)
+    bf.bytes = new_bytes
+}
+
 func (bf *Bitfield) Size() int64 { 
     return int64(len(bf.bytes)) 
 }
@@ -28,7 +34,7 @@ func (bf *Bitfield) Grow(n int64) {
     }
 
     new_bytes := make([]byte, int64(len(bf.bytes) + 1) + n)
-    copy(bf.bytes, new_bytes)
+    copy(new_bytes, bf.bytes)
     bf.bytes = new_bytes
 }
 
