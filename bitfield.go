@@ -44,7 +44,7 @@ func (bf *Bitfield) SetBit(n int) {
 
     if index > bf.Size() - 1{
         if bf.autosizing == true {
-            bf.Grow(index - bf.Size() - 1)
+            bf.Grow(index - bf.Size())
         } else {
             panic("INVALID INDEX")
         }
