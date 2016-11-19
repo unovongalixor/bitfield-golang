@@ -73,7 +73,7 @@ func (bf *Bitfield) GetBit(n int) bool {
     index := int64(n / 4)
     bit := uint16(n % 4)
 
-    if index > bf.Size() {
+    if index >= bf.Size() {
         return false
     }
 
