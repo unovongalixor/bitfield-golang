@@ -20,6 +20,10 @@ func (bf *Bitfield) Copy(b []byte) {
     bf.bytes = new_bytes
 }
 
+func (bf *Bitfield) MaxIndex() int64 { 
+    return int64(len(bf.bytes) / 4) 
+}
+
 func (bf *Bitfield) Size() int64 { 
     return int64(len(bf.bytes)) 
 }
